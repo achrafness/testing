@@ -1,5 +1,5 @@
 # Use the official PyTorch image with CUDA support (adjust tag if needed)
-FROM pytorch/pytorch:2.0.1-cuda11.8-cudnn8-runtime
+FROM pytorch/pytorch:2.0.1-cuda11.8-cudnn8-devel
 
 # Avoid interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
