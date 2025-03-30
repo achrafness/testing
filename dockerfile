@@ -4,7 +4,10 @@ FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 # Avoid interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Set working directory
+# Disable torch AO quantization (avoids torch.float8_e4m3fn error)
+ENV DIFFUSERS_NO_TORCH_AO_QUANTIZATION=1
+
+# Set the working directory
 WORKDIR /app
 
 # Install system dependencies
@@ -25,7 +28,7 @@ ENV PYTHONPATH="/app/cog-sdxl:${PYTHONPATH}"
 # Copy the Flask application code into the container
 COPY . .
 
-# Expose the Flask port
+# Expose port 5000 for the Flask app
 EXPOSE 5000
 
 # Run the Flask application
