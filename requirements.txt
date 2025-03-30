@@ -5,6 +5,4 @@ accelerate
 safetensors
 huggingface_hub
 Pillow
-# Install cog-sdxl utilities directly from GitHub:
-git+https://github.com/replicate/cog-sdxl
 
